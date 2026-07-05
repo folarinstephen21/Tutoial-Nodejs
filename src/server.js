@@ -2,6 +2,7 @@ import express from "express";
 import {  config } from "dotenv";
 import movieRoutes from "./routes/movieRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import watchlistRoutes from "./routes/watchlishtRoutes.js";
 import { connectDB, disconnectDB } from "./config/db.js";
 
 config();
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/movies", movieRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/watchlist", watchlistRoutes);
 
 
 
